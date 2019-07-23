@@ -1,6 +1,16 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+const var1 = 'ABC';
+function myFunction() {
+  const var2 = 'XYZ'
+  console.log(`My function sees var1 and its value of: ${var1}`);
+  return var2;
+}
+console.log(var1);
+//the line below will return an error
+//console.log(var2);
+console.log(myFunction());
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
