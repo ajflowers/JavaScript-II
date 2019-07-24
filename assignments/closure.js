@@ -59,17 +59,62 @@ const counterFactory = (initValue) => {
   }
 };
 
-const countDown = counterFactory(100).decrement;
-console.log(countDown());
-console.log(countDown());
-console.log(countDown());
-console.log(countDown());
-console.log(countDown());
-console.log(countDown());
-console.log(countDown());
+const test = counterFactory(1000);
+console.log(test);
 
-const countUp = counterFactory(10).increment;
-console.log(countUp());
-console.log(countUp());
-console.log(countUp());
-console.log(countUp());
+console.log(test.increment());
+console.log(test.increment());
+console.log(test.increment());
+console.log(test.decrement());
+console.log(test.increment());
+
+const testAgain = counterFactory(100);
+console.log(testAgain.increment());
+console.log(testAgain.increment());
+console.log(test.increment());
+
+// const countDown = counterFactory(100).decrement;
+// console.log(countDown());
+// console.log(countDown());
+// console.log(countDown());
+// console.log(countDown());
+// console.log(countDown());
+
+
+// const countUp = counterFactory(10).increment;
+// console.log(countUp());
+// console.log(countUp());
+// console.log(countUp());
+
+
+// console.log(countDown());
+// console.log(countDown());
+// console.log(countUp());
+
+
+// ====== trying another way =====
+const betterFactory = (initValue) => { 
+  return {
+      "count": initValue,
+      "increment": function() {
+      this.count++;
+      return this.count;
+    },
+
+    "decrement": function() {
+      this.count--;
+      return this.count;
+    }
+  }
+};
+
+const bothWays = betterFactory(50);
+console.log(bothWays);
+console.log(bothWays.increment());
+console.log(bothWays.increment());
+console.log(bothWays.increment());
+console.log(bothWays.increment());
+console.log(bothWays.decrement());
+console.log(bothWays.decrement());
+console.log(bothWays.decrement());
+console.log(bothWays.increment());
